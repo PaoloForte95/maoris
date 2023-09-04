@@ -622,7 +622,7 @@ void AASS::maoris::GraphZone::getAllNodeRemovedRipples(
         if ((*this)[e_second].canRemove()) {
             VertexZone targ = boost::target(e_second, (*this));
 
-            if (isRipple(base_vertex, targ) ==
+            if (isRipple(base_vertex, targ) == true){
                 bool is_visited = false;
                 for (size_t j = 0; j < top_vertex_visited.size(); ++j) {
                 if (targ == top_vertex_visited[j]) {
