@@ -1,6 +1,7 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.10)
+cmake_policy(VERSION 3.10)
 project(maoris)
-
+add_compile_options(-std=c++17 -O3 -Wall -Wextra)
 find_package( OpenCV REQUIRED)
 find_package( bettergraph REQUIRED)
 find_package( vodigrex REQUIRED)
