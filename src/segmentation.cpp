@@ -25,6 +25,7 @@
 #include "Segmentor.hpp"
 #include "ZoneExtractor.hpp"
 #include "ZoneReducer.hpp"
+#include <opencv2/highgui/highgui.hpp>
 
 void draw(AASS::maoris::GraphZone& gp_real,
           AASS::maoris::GraphZone& gp_model,
@@ -290,6 +291,7 @@ void process(cv::Mat& slam_in,
     //     graph_slam.drawPartial(partial);
 
     cv::Mat img_hist_equalized;
+    
     cv::equalizeHist(graphmat, img_hist_equalized);
     // 	cv::resize(graphmat, graphmat, cv::Size(graphmat.cols * 2, graphmat.rows
     // * 2));
@@ -383,18 +385,18 @@ int main(int argc, char** argv) {
     cv::Mat frame = framei > 250;
 
     // Choose param
-    double threshold = 0.3;
-    double margin = 0.1;
-    double ripples = 40;
-    double doors = 60;
+    double threshold = 0.7;
+    double margin = 0.2;
+    double ripples = 20;
+    double doors = 50;
 
-    std::cout << "Threshold : 0.3 " << std::endl;
+    std::cout << "Threshold : "<< threshold << std::endl;
     //    std::cin >> threshold;
-    std::cout << "Margin : 0.1" << std::endl;
+    std::cout << "Margin : "<< margin << std::endl;
     //    std::cin >> margin;
-    std::cout << "Ripples : 40" << std::endl;
+    std::cout << "Ripples : "<< ripples << std::endl;
     //    std::cin >> ripples;
-    std::cout << "Doors : 60" << std::endl;
+    std::cout << "Doors : "<< doors << std::endl;
     //    std::cin >> doors;
 
     std::cout << "Welcome to the maoris test program.\n\n**** Press space to "
